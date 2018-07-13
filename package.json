@@ -20,5 +20,7 @@
     "webpack-dev-server": "^3.1.4",
     "simplr-tslint": "^1.0.0-alpha.14"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@noia-network/sdk": "^1.0.0-hackathon"
+  }
 }
