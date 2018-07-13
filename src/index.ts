@@ -8,6 +8,7 @@ import * as Worker from "worker-loader!@noia-network/sdk/worker";
 
 import * as ImageExample from "./examples/image/image";
 import * as VideoExample from "./examples/video/video";
+import * as ModelsExample from "./examples/models/models";
 
 /**
  * Just a convenience function to not duplicate this code all over again
@@ -32,5 +33,6 @@ document.addEventListener(
   (): void => {
     ImageExample.run(createExampleContainer("image", "Image example"), noiaClient);
     VideoExample.run(createExampleContainer("video", "Video example"), noiaClient);
+    ModelsExample.run(createExampleContainer("models", "Models example"), noiaClient);
   }
 );

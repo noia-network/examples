@@ -9,7 +9,7 @@ export async function run(
 ): Promise<void> {
   console.info("Video example.");
   container.className = "video-example";
-  container.innerHTML = `<img class="loader" />`;
+  container.innerHTML = `<div class="loader" />`;
 
   // Load video bytes
   const videoBytes = await noiaClient.download({

@@ -6,7 +6,7 @@ import { bytesToBase64 } from "../../base64";
 export async function run(container: HTMLElement, noiaClient: NoiaClient): Promise<void> {
   console.info("Image example.");
   container.className = "image-example";
-  container.innerHTML = `<img class="loader" />`;
+  container.innerHTML = `<div class="loader" />`;
 
   // Load image bytes
   const imageBytes = await noiaClient.download({
