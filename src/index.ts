@@ -7,6 +7,7 @@ import { NoiaClient } from "@noia-network/sdk";
 import * as Worker from "worker-loader!@noia-network/sdk/worker";
 
 import * as ImageExample from "./examples/image/image";
+import * as ImageReactExample from "./examples/image/image-react";
 import * as VideoExample from "./examples/video/video";
 import * as ModelsExample from "./examples/models/models";
 
@@ -32,6 +33,7 @@ document.addEventListener(
   "DOMContentLoaded",
   (): void => {
     ImageExample.run(createExampleContainer("image", "Image example"), noiaClient);
+    ImageReactExample.run(createExampleContainer("image", "Image example"), noiaClient);
     VideoExample.run(createExampleContainer("video", "Video example"), noiaClient);
     ModelsExample.run(createExampleContainer("models", "Models example"), noiaClient);
   }
