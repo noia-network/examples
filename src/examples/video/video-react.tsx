@@ -2,10 +2,10 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { NoiaClient, NoiaClientContainer } from "@noia-network/sdk";
 import * as Worker from "worker-loader!@noia-network/sdk/worker";
-import { Image } from "@noia-network/sdk-react";
+import { Video } from "@noia-network/sdk-react";
 import "@noia-network/sdk/dist/vendors~main";
 
-import "./image.scss";
+import "./video.scss";
 
 const noiaClient = new NoiaClient(() => new Worker());
 NoiaClientContainer.initialize(noiaClient);
@@ -17,9 +17,12 @@ interface ExampleViewProps {
 export class ExampleView extends React.Component<ExampleViewProps> {
   public render(): JSX.Element {
     return (
-      <div className="image-example">
-        <Image
-          src="ipfs:QmeMHGKY3WWTt41EK5sntQVuPY8Wcq7R47KEE4jm4nNQTu"
+      <div className="video-example">
+        <Video
+          controls={true}
+          loop={true}
+          src="ipfs:QmeynYjeMnWVXs4APAfr1GNRqUteAz3ABxYfBYGdstNvVB"
+          mimeType="video/mp4"
           loaderComponent={<div className="loader" />}
         />
       </div>
@@ -27,10 +30,8 @@ export class ExampleView extends React.Component<ExampleViewProps> {
   }
 }
 
-export async function run(
-  container: HTMLElement
-): Promise<void> {
-  console.info("Image with React example.");
+export async function run(container: HTMLElement): Promise<void> {
+  console.info("Video with React example.");
 
   ReactDOM.render(<ExampleView noiaClient={noiaClient} />, container);
 }
