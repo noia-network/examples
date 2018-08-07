@@ -25,7 +25,7 @@ export async function run(container: HTMLElement, noiaClient: NoiaClient): Promi
     const modelBytes = await noiaClient.download({
         // 64mb bust model of Gutenberg
         // src: "ipfs:QmZzRF2DwNi2RqFiZRZqfP7UAXyxte4LLfsqbQ1aQ15hh4"
-        src: "ipfs:QmdHFsNXhMtWzBEH8SeEHhdLYWw4UZjUWPqdmDsccG4LbG"
+        src: "https://noia.network/samples/model.bin"
     });
 
     console.info(`Model downloaded (${modelBytes.length} bytes)`);

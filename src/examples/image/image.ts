@@ -10,7 +10,7 @@ export async function run(container: HTMLElement, noiaClient: NoiaClient): Promi
 
   // Load image bytes
   const imageBytes = await noiaClient.download({
-    src: "ipfs:QmeMHGKY3WWTt41EK5sntQVuPY8Wcq7R47KEE4jm4nNQTu"
+    src: "https://noia.network/samples/image.jpg"
   });
 
   console.info(`Image downloaded (${imageBytes.length} bytes)`);
