@@ -19,7 +19,7 @@ export class ExampleView extends React.Component<ExampleViewProps> {
     return (
       <div className="image-example">
         <Image
-          src="ipfs:QmeMHGKY3WWTt41EK5sntQVuPY8Wcq7R47KEE4jm4nNQTu"
+          src="https://noia.network/samples/image.jpg"
           loaderComponent={<div className="loader" />}
         />
       </div>

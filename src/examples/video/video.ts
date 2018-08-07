@@ -13,7 +13,7 @@ export async function run(
 
   // Load video bytes
   const videoBytes = await noiaClient.download({
-    src: "ipfs:QmeynYjeMnWVXs4APAfr1GNRqUteAz3ABxYfBYGdstNvVB"
+    src: "https://noia.network/samples/video.mp4"
   });
 
   console.info(`Video downloaded (${videoBytes.length} bytes)`);

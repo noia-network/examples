@@ -21,7 +21,7 @@ export class ExampleView extends React.Component<ExampleViewProps> {
         <Video
           controls={true}
           loop={true}
-          src="ipfs:QmeynYjeMnWVXs4APAfr1GNRqUteAz3ABxYfBYGdstNvVB"
+          src="https://noia.network/samples/video.mp4"
           mimeType="video/mp4"
           loaderComponent={<div className="loader" />}
         />
