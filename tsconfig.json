@@ -6,6 +6,8 @@
         "outDir": "dist",
         "jsx": "react",
         "lib": ["dom", "es2015"],
+        "inlineSourceMap": true,
+        "inlineSources": true,
         "plugins": [
             {
                 "name": "tslint-language-service",
