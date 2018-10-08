@@ -26,8 +26,8 @@
         "webpack-dev-server": "^3.1.4"
     },
     "dependencies": {
-        "@noia-network/sdk": "file://D:\\Projects\\Noia\\full-ecosystem\\nodejs-sdk\\packages\\sdk",
-        "@noia-network/sdk-react": "file://D:\\Projects\\Noia\\full-ecosystem\\nodejs-sdk\\packages\\sdk-react",
+        "@noia-network/sdk": "2.0.0-beta.1",
+        "@noia-network/sdk-react": "2.0.0-beta.1",
         "@types/from2": "^2.3.0",
         "from2": "^2.3.0",
         "react": "^16.4.1",

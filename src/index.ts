@@ -10,7 +10,7 @@ import * as Sha1Worker from "worker-loader!rusha/dist/rusha";
 import * as ImageExample from "./examples/image/image";
 import * as ImageReactExample from "./examples/image/image-react";
 import * as VideoExample from "./examples/video/video";
-// import * as VideoReactExample from "./examples/video/video-react";
+import * as VideoReactExample from "./examples/video/video-react";
 import * as ModelsExample from "./examples/models/models";
 
 /**
@@ -40,17 +40,17 @@ NoiaClientContainer.initialize(
 document.addEventListener(
     "DOMContentLoaded",
     (): void => {
-        // ImageExample.run(createExampleContainer("image", "Image example"), NoiaClientContainer.getClient());
-        // ImageReactExample.run(
-        //   createExampleContainer("image", "React Image component example")
-        // );
-        VideoExample.run(createExampleContainer("video", "Video example"), NoiaClientContainer.getClient());
-        // VideoReactExample.run(
-        //   createExampleContainer("video", "React Video component example")
-        // );
-        // ModelsExample.run(
-        //   createExampleContainer("models", "Models example"),
-        //   NoiaClientContainer.getClient()
-        // );
+        ImageExample.run(createExampleContainer("image", "Image example"), NoiaClientContainer.getClient());
+        ImageReactExample.run(
+          createExampleContainer("image", "React Image component example")
+        );
+        VideoExample.run(createExampleContainer("video", "Video example (stream, 1/10th pre-buffer)"), NoiaClientContainer.getClient());
+        VideoReactExample.run(
+          createExampleContainer("video", "React Video component example (full download)")
+        );
+        ModelsExample.run(
+          createExampleContainer("models", "Models example"),
+          NoiaClientContainer.getClient()
+        );
     }
 );
