@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { NoiaClient, NoiaClientContainer } from "@noia-network/sdk";
-import * as Worker from "worker-loader!@noia-network/sdk/worker";
 import { Video } from "@noia-network/sdk-react";
 
 import * as PieceWorker from "worker-loader!@noia-network/sdk/worker";
