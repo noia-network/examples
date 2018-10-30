@@ -21,12 +21,14 @@ export async function run(container: HTMLElement, noiaClient: NoiaClient): Promi
     container.className = "models-example";
     container.innerHTML = `<div class="loader" />`;
 
-    // Load model bytes
-    const modelBytes = await noiaClient.download({
+    const stream = await noiaClient.openStream({
         // 64mb bust model of Gutenberg
         // src: "ipfs:QmZzRF2DwNi2RqFiZRZqfP7UAXyxte4LLfsqbQ1aQ15hh4"
         src: "https://noia.network/samples/model.bin"
     });
+
+    // Load model bytes
+    const modelBytes = await stream.getAllBytes();
 
     console.info(`Model downloaded (${modelBytes.length} bytes)`);
     const modelType: string = "application/sla";

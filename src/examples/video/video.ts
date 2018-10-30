@@ -1,29 +1,66 @@
+import { NoiaClient } from "@noia-network/sdk";
+
+import * as renderMedia from "render-media";
+import * as from from "from2";
+import { logger } from "../../logger";
+
 import "./video.scss";
 
-import { NoiaClient } from "@noia-network/sdk";
-import { bytesToBase64 } from "../../base64";
+export async function run(container: HTMLElement, noiaClient: NoiaClient): Promise<void> {
+    console.info("Video example.");
+    container.className = "video-example";
+    container.innerHTML = `<div class="loader" />`;
 
-export async function run(
-  container: HTMLElement,
-  noiaClient: NoiaClient
-): Promise<void> {
-  console.info("Video example.");
-  container.className = "video-example";
-  container.innerHTML = `<div class="loader" />`;
+    const noiaStream = await noiaClient.openStream({
+        src: "https://noia.network/samples/video.mp4"
+    });
 
-  // Load video bytes
-  const videoBytes = await noiaClient.download({
-    src: "https://noia.network/samples/video.mp4"
-  });
+    // Buffer 1/10th of the video in advance.
+    noiaStream.bufferBytes({
+        start: 0,
+        length: noiaStream.masterData.metadata.bufferLength / 10
+    });
 
-  console.info(`Video downloaded (${videoBytes.length} bytes)`);
+    const file: renderMedia.RenderFile = {
+        name: "video.mp4",
+        length: noiaStream.masterData.metadata.bufferLength,
+        createReadStream: (opts: renderMedia.CreateReadStreamOptions = {}) => {
+            const start = opts.start || 0;
+            const end = opts.end || noiaStream.masterData.metadata.bufferLength - 1;
 
-  // Render video
-  const videoType = "video/mp4";
-  container.innerHTML = `
-<video controls>
-    <source type="video/mp4" src="data:${videoType};base64,${bytesToBase64(
-    videoBytes
-  )}">
-</video>`;
+            let startBytes: number = start;
+            return from(async (size, next) => {
+                const nextBytesPromise = noiaStream.getBytes({ start: startBytes, length: size });
+
+                const chunksToBuffer = 50;
+
+                // Buffer a few more chunks, while the current frames are shown.
+                for (let i = 0; i < chunksToBuffer; i++) {
+                    noiaStream.getBytes({ start: startBytes + size * i, length: size });
+                }
+
+                const nextBytes = await nextBytesPromise;
+
+                startBytes += size;
+                next(null, nextBytes);
+
+                if (startBytes > end) {
+                    next(null, null);
+                }
+            });
+        }
+    };
+
+    const video = document.createElement("video");
+    video.controls = true;
+    container.innerHTML = "";
+    container.append(video);
+
+    renderMedia.render(file, video, {}, (err: Error | null, elem: HTMLElement) => {
+        if (err) {
+            return console.error(err.message);
+        }
+        // Rendered element with the media in it.
+        logger.Debug("Rendered element with the media in it.", elem);
+    });
 }
