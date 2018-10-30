@@ -18,15 +18,15 @@ export async function run(container: HTMLElement, noiaClient: NoiaClient): Promi
     // Buffer 1/10th of the video in advance.
     noiaStream.bufferBytes({
         start: 0,
-        length: noiaStream.metadata.torrent.length / 10
+        length: noiaStream.masterData.metadata.bufferLength / 10
     });
 
     const file: renderMedia.RenderFile = {
         name: "video.mp4",
-        length: noiaStream.metadata.torrent.length,
+        length: noiaStream.masterData.metadata.bufferLength,
         createReadStream: (opts: renderMedia.CreateReadStreamOptions = {}) => {
             const start = opts.start || 0;
-            const end = opts.end || noiaStream.metadata.torrent.length - 1;
+            const end = opts.end || noiaStream.masterData.metadata.bufferLength - 1;
 
             let startBytes: number = start;
             return from(async (size, next) => {
