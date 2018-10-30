@@ -6,6 +6,7 @@ dependencies:
   render-media: 3.1.3
   rusha: 0.8.13
   stl-viewer: 0.9.0
+  tslib: 1.9.3
 devDependencies:
   '@simplrjs/webpack': 0.1.0-alpha.6
   '@types/react': 16.4.14
@@ -31,7 +32,7 @@ packages:
       '@types/webpack': 4.4.13
       autoprefixer: 8.6.5
       babel-core: 6.26.3
-      babel-loader: 7.1.5
+      babel-loader: /babel-loader/7.1.5/babel-core@6.26.3
       babel-plugin-syntax-dynamic-import: 6.18.0
       clean-webpack-plugin: 0.1.19
       copy-webpack-plugin: 4.5.2
@@ -329,14 +330,9 @@ packages:
       ajv: '>=5.0.0'
     resolution:
       integrity: sha1-7PAh+hCP0X37Xms4Py3SM+Mf/Fk=
-  /ajv-keywords/3.2.0:
-    dev: true
-    peerDependencies:
-      ajv: ^6.0.0
-    resolution:
-      integrity: sha1-6GuBnGAs+IIa1jdBNpjx3sAhhHo=
   /ajv-keywords/3.2.0/ajv@6.5.4:
-    dependencies: {}
+    dependencies:
+      ajv: 6.5.4
     dev: true
     id: registry.npmjs.org/ajv-keywords/3.2.0
     peerDependencies:
@@ -616,10 +612,13 @@ packages:
     dev: true
     resolution:
       integrity: sha1-NHHenK7DiOXIUOWX5Yom3fN2ArI=
-  /babel-loader/7.1.5:
+  /babel-loader/7.1.5/babel-core@6.26.3:
+    dependencies:
+      babel-core: 6.26.3
     dev: true
     engines:
       node: '>=4'
+    id: registry.npmjs.org/babel-loader/7.1.5
     peerDependencies:
       babel-core: '6'
       webpack: 2 || 3 || 4
@@ -2559,7 +2558,6 @@ packages:
       webpack: ^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
     resolution:
       integrity: sha1-sBq71yOsqqeze2r0SS69oD2d03s=
-      tarball: 'http://registry.npmjs.org/html-webpack-plugin/-/html-webpack-plugin-3.2.0.tgz'
   /html-webpack-template/6.2.0/html-webpack-plugin@3.2.0:
     dependencies:
       html-webpack-plugin: 3.2.0
@@ -5441,7 +5439,6 @@ packages:
     resolution:
       integrity: sha512-ihgVaSmgrX4crGV4n7yuoHPoCHbDzj9aepCZR9TgIx4SgJ9gdnB6xLHgUBb7bsFM/f0K6x9iXa65KY/Fu1Klkw==
   /tslib/1.9.3:
-    dev: true
     resolution:
       integrity: sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
   /tslint-language-service/0.9.9:
@@ -5844,7 +5841,7 @@ packages:
       acorn: 5.7.3
       acorn-dynamic-import: 3.0.0
       ajv: 6.5.4
-      ajv-keywords: 3.2.0
+      ajv-keywords: /ajv-keywords/3.2.0/ajv@6.5.4
       chrome-trace-event: 1.0.0
       enhanced-resolve: 4.1.0
       eslint-scope: 4.0.0
@@ -6043,6 +6040,7 @@ specifiers:
   simplr-logger: ^1.0.1
   simplr-tslint: ^1.0.0-alpha.14
   stl-viewer: ^0.9.0
+  tslib: 1.9.3
   tslint: ^5.11.0
   tslint-language-service: ^0.9.9
   typescript: 3.1.1

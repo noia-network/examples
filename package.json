@@ -28,6 +28,7 @@
     "dependencies": {
         "@noia-network/sdk": "2.0.0-beta.1",
         "@noia-network/sdk-react": "2.0.0-beta.1",
+        "tslib": "1.9.3",
         "@types/from2": "^2.3.0",
         "from2": "^2.3.0",
         "react": "^16.4.1",
