@@ -592,15 +592,15 @@ var React = __webpack_require__(/*! react */ "./node_modules/.registry.npmjs.org
 
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/.registry.npmjs.org/react-dom/16.6.0/node_modules/react-dom/index.js");
 
-var sdk_1 = __webpack_require__(/*! @noia-network/sdk */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.0-beta.4/node_modules/@noia-network/sdk/dist/main.js");
+var sdk_1 = __webpack_require__(/*! @noia-network/sdk */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.1-rc/node_modules/@noia-network/sdk/dist/main.js");
 
-var sdk_react_1 = __webpack_require__(/*! @noia-network/sdk-react */ "./node_modules/.registry.npmjs.org/@noia-network/sdk-react/2.0.0-beta.4/node_modules/@noia-network/sdk-react/dist/index.js");
+var sdk_react_1 = __webpack_require__(/*! @noia-network/sdk-react */ "./node_modules/.registry.npmjs.org/@noia-network/sdk-react/2.0.1-rc/node_modules/@noia-network/sdk-react/dist/index.js");
 
-var PieceWorker = __webpack_require__(/*! worker-loader!@noia-network/sdk/worker */ "./node_modules/.registry.npmjs.org/worker-loader/2.0.0/node_modules/worker-loader/dist/cjs.js!./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.0-beta.4/node_modules/@noia-network/sdk/worker.js");
+var PieceWorker = __webpack_require__(/*! worker-loader!@noia-network/sdk/worker */ "./node_modules/.registry.npmjs.org/worker-loader/2.0.0/node_modules/worker-loader/dist/cjs.js!./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.1-rc/node_modules/@noia-network/sdk/worker.js");
 
 var Sha1Worker = __webpack_require__(/*! worker-loader!rusha/dist/rusha */ "./node_modules/.registry.npmjs.org/worker-loader/2.0.0/node_modules/worker-loader/dist/cjs.js!./node_modules/.registry.npmjs.org/rusha/0.8.13/node_modules/rusha/dist/rusha.js");
 
-__webpack_require__(/*! @noia-network/sdk/dist/vendors~main */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.0-beta.4/node_modules/@noia-network/sdk/dist/vendors~main.js");
+__webpack_require__(/*! @noia-network/sdk/dist/vendors~main */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.1-rc/node_modules/@noia-network/sdk/dist/vendors~main.js");
 
 __webpack_require__(/*! ./image.scss */ "./src/examples/image/image.scss");
 
@@ -839,7 +839,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-__webpack_require__(/*! @noia-network/sdk/dist/vendors~main */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.0-beta.4/node_modules/@noia-network/sdk/dist/vendors~main.js");
+__webpack_require__(/*! @noia-network/sdk/dist/vendors~main */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.1-rc/node_modules/@noia-network/sdk/dist/vendors~main.js");
 
 var base64_1 = __webpack_require__(/*! ../../base64 */ "./src/base64.ts");
 
@@ -1096,7 +1096,7 @@ var StlViewer = __webpack_require__(/*! stl-viewer */ "./node_modules/.registry.
 
 var base64_1 = __webpack_require__(/*! ../../base64 */ "./src/base64.ts");
 
-__webpack_require__(/*! @noia-network/sdk/dist/vendors~main */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.0-beta.4/node_modules/@noia-network/sdk/dist/vendors~main.js");
+__webpack_require__(/*! @noia-network/sdk/dist/vendors~main */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.1-rc/node_modules/@noia-network/sdk/dist/vendors~main.js");
 
 __webpack_require__(/*! ./models.scss */ "./src/examples/models/models.scss");
 
@@ -1341,15 +1341,15 @@ var React = __webpack_require__(/*! react */ "./node_modules/.registry.npmjs.org
 
 var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/.registry.npmjs.org/react-dom/16.6.0/node_modules/react-dom/index.js");
 
-var sdk_1 = __webpack_require__(/*! @noia-network/sdk */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.0-beta.4/node_modules/@noia-network/sdk/dist/main.js");
+var sdk_1 = __webpack_require__(/*! @noia-network/sdk */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.1-rc/node_modules/@noia-network/sdk/dist/main.js");
 
-var sdk_react_1 = __webpack_require__(/*! @noia-network/sdk-react */ "./node_modules/.registry.npmjs.org/@noia-network/sdk-react/2.0.0-beta.4/node_modules/@noia-network/sdk-react/dist/index.js");
+var sdk_react_1 = __webpack_require__(/*! @noia-network/sdk-react */ "./node_modules/.registry.npmjs.org/@noia-network/sdk-react/2.0.1-rc/node_modules/@noia-network/sdk-react/dist/index.js");
 
-var PieceWorker = __webpack_require__(/*! worker-loader!@noia-network/sdk/worker */ "./node_modules/.registry.npmjs.org/worker-loader/2.0.0/node_modules/worker-loader/dist/cjs.js!./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.0-beta.4/node_modules/@noia-network/sdk/worker.js");
+var PieceWorker = __webpack_require__(/*! worker-loader!@noia-network/sdk/worker */ "./node_modules/.registry.npmjs.org/worker-loader/2.0.0/node_modules/worker-loader/dist/cjs.js!./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.1-rc/node_modules/@noia-network/sdk/worker.js");
 
 var Sha1Worker = __webpack_require__(/*! worker-loader!rusha/dist/rusha */ "./node_modules/.registry.npmjs.org/worker-loader/2.0.0/node_modules/worker-loader/dist/cjs.js!./node_modules/.registry.npmjs.org/rusha/0.8.13/node_modules/rusha/dist/rusha.js");
 
-__webpack_require__(/*! @noia-network/sdk/dist/vendors~main */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.0-beta.4/node_modules/@noia-network/sdk/dist/vendors~main.js");
+__webpack_require__(/*! @noia-network/sdk/dist/vendors~main */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.1-rc/node_modules/@noia-network/sdk/dist/vendors~main.js");
 
 __webpack_require__(/*! ./video.scss */ "./src/examples/video/video.scss");
 
@@ -1720,11 +1720,11 @@ __webpack_require__(/*! ./assets/main.scss */ "./src/assets/main.scss");
 
 __webpack_require__(/*! ./assets/loader.scss */ "./src/assets/loader.scss");
 
-__webpack_require__(/*! @noia-network/sdk/dist/vendors~main */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.0-beta.4/node_modules/@noia-network/sdk/dist/vendors~main.js");
+__webpack_require__(/*! @noia-network/sdk/dist/vendors~main */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.1-rc/node_modules/@noia-network/sdk/dist/vendors~main.js");
 
-var sdk_1 = __webpack_require__(/*! @noia-network/sdk */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.0-beta.4/node_modules/@noia-network/sdk/dist/main.js");
+var sdk_1 = __webpack_require__(/*! @noia-network/sdk */ "./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.1-rc/node_modules/@noia-network/sdk/dist/main.js");
 
-var PieceWorker = __webpack_require__(/*! worker-loader!@noia-network/sdk/worker */ "./node_modules/.registry.npmjs.org/worker-loader/2.0.0/node_modules/worker-loader/dist/cjs.js!./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.0-beta.4/node_modules/@noia-network/sdk/worker.js");
+var PieceWorker = __webpack_require__(/*! worker-loader!@noia-network/sdk/worker */ "./node_modules/.registry.npmjs.org/worker-loader/2.0.0/node_modules/worker-loader/dist/cjs.js!./node_modules/.registry.npmjs.org/@noia-network/sdk/2.0.1-rc/node_modules/@noia-network/sdk/worker.js");
 
 var Sha1Worker = __webpack_require__(/*! worker-loader!rusha/dist/rusha */ "./node_modules/.registry.npmjs.org/worker-loader/2.0.0/node_modules/worker-loader/dist/cjs.js!./node_modules/.registry.npmjs.org/rusha/0.8.13/node_modules/rusha/dist/rusha.js");
 
