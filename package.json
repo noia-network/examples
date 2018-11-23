@@ -37,8 +37,8 @@
     "worker-loader": "^2.0.0"
   },
   "dependencies": {
-    "@noia-network/sdk": "2.0.0-beta.4",
-    "@noia-network/sdk-react": "2.0.0-beta.4",
+    "@noia-network/sdk": "2.0.1-rc",
+    "@noia-network/sdk-react": "2.0.1-rc",
     "@noia-network/webrtc-direct-client": "1.0.1-rc.2",
     "@types/from2": "^2.3.0",
     "from2": "^2.3.0",
