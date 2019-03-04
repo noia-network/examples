@@ -1,5 +1,8 @@
 # NOIA Network SDK Examples
 
+## Using as a stand-alone plain javascript library.
+
+On how to use NOIA SDK as stand-alone plain javascript library please refer to `library` branch.
 
 ## Running examples locally
 
@@ -69,6 +72,7 @@ async function main() {
     // bytes are available here
 }
 ```
+
 ## Minimal plain Javascript / TypeScript usage to get picture using getAllBytes()
 
 ```
@@ -87,6 +91,7 @@ async function main() {
     imageBytes
   )}" />`;
 ```
+
 ## Minimal plain Javascript / TypeScript usage to get video without buffering using getAllBytes()
 
 ```
@@ -106,7 +111,9 @@ const stream = await noiaClient.openStream({
     <source type="video/mp4" src="data:${videoType};base64,${bytesToBase64(videoBytes)}">
 </video>`;
 ```
+
 ## Plain Javascript / TypeScript usage to get video with buffering using Rendermedia
+
 ## Noia SDK low level functions can be used in other video player implementations for buffering
 
 ```
@@ -151,8 +158,8 @@ const noiaStream = await noiaClient.openStream({
     };
 ```
 
-
 Depending on your build pipeline, you might need to add this import too:
+
 ```ts
 import "@noia-network/sdk/dist/vendors~main";
 ```
