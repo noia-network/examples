@@ -2,7 +2,7 @@
 
 ## Using as a stand-alone plain javascript library.
 
-On how to use NOIA SDK as stand-alone plain javascript library please refer to `library` branch.
+On how to use NOIA SDK as stand-alone plain javascript library please refer to [SDK Web Lib](https://github.com/noia-network/sdk/tree/master/packages/sdk-web-lib).
 
 ## Running examples locally
 
