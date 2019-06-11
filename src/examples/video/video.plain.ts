@@ -19,8 +19,11 @@ export async function run(container: HTMLElement, noiaClient: NoiaClient): Promi
 
     // Render video
     const videoType = "video/mp4";
+    const blob = new Blob([videoBytes], { type: videoType });
+    const blobUrl = URL.createObjectURL(blob);
+    stream.masterData.src = blobUrl;
     container.innerHTML = `
-<video controls>
-    <source type="video/mp4" src="data:${videoType};base64,${bytesToBase64(videoBytes)}">
-</video>`;
+    <video controls>
+        <source type="${videoType}" src="data:${videoType};base64,${blobUrl}">
+    </video>`;
 }

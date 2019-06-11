@@ -4,22 +4,24 @@ import { bytesToBase64 } from "../../base64";
 import "./image.scss";
 
 export async function run(container: HTMLElement, noiaClient: NoiaClient): Promise<void> {
-  console.info("Image example.");
-  container.className = "image-example";
-  container.innerHTML = `<div class="loader" />`;
+    console.info("Image example.");
+    container.className = "image-example";
+    container.innerHTML = `<div class="loader" />`;
 
-  const stream = await noiaClient.openStream({
-    src: "https://noia.network/samples/image.jpg"
-  });
+    const stream = await noiaClient.openStream({
+        src: "https://noia.network/samples/image.jpg"
+    });
 
-  // Load image bytes
-  const imageBytes = await stream.getAllBytes();
+    // Load image bytes
+    const imageBytes = await stream.getAllBytes();
 
-  console.info(`Image downloaded (${imageBytes.length} bytes)`);
+    const imageType = "image/jpeg";
 
-  // Render image as bytes
-  const imageType = "image/jpeg";
-  container.innerHTML = `<img src="data:${imageType};base64,${bytesToBase64(
-    imageBytes
-  )}" />`;
+    console.info(`Image downloaded (${imageBytes.length} bytes)`);
+
+    const blob = new Blob([imageBytes], { type: imageType });
+    const blobUrl = URL.createObjectURL(blob);
+
+    // Render image as bytes
+    container.innerHTML = `<img src="${blobUrl}" />`;
 }

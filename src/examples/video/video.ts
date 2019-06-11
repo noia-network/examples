@@ -15,52 +15,62 @@ export async function run(container: HTMLElement, noiaClient: NoiaClient): Promi
         src: "https://noia.network/samples/video.mp4"
     });
 
-    // Buffer 1/10th of the video in advance.
-    noiaStream.bufferBytes({
-        start: 0,
-        length: noiaStream.masterData.metadata.bufferLength / 10
-    });
+    const videoType = "video/mp4";
 
-    const file: renderMedia.RenderFile = {
-        name: "video.mp4",
-        length: noiaStream.masterData.metadata.bufferLength,
-        createReadStream: (opts: renderMedia.CreateReadStreamOptions = {}) => {
-            const start = opts.start || 0;
-            const end = opts.end || noiaStream.masterData.metadata.bufferLength - 1;
+    if (noiaStream.masterData.metadata === undefined) {
+        container.innerHTML = `
+        <video controls>
+            <source type="${videoType}" src="${noiaStream.masterData.src}">
+            <p>This browser does not support the video element.</p>
+        </video>`;
+    } else {
+        // Buffer 1/10th of the video in advance.
+        noiaStream.bufferBytes({
+            start: 0,
+            length: noiaStream.masterData.metadata.bufferLength / 10
+        });
 
-            let startBytes: number = start;
-            return from(async (size, next) => {
-                const nextBytesPromise = noiaStream.getBytes({ start: startBytes, length: size });
+        const file: renderMedia.RenderFile = {
+            name: "video.mp4",
+            length: noiaStream.masterData.metadata.bufferLength,
+            createReadStream: (opts: renderMedia.CreateReadStreamOptions = {}) => {
+                const start = opts.start || 0;
+                const end = opts.end || noiaStream.masterData.metadata.bufferLength - 1;
 
-                const chunksToBuffer = 50;
+                let startBytes: number = start;
+                return from(async (size, next) => {
+                    const nextBytesPromise = noiaStream.getBytes({ start: startBytes, length: size });
 
-                // Buffer a few more chunks, while the current frames are shown.
-                for (let i = 0; i < chunksToBuffer; i++) {
-                    noiaStream.getBytes({ start: startBytes + size * i, length: size });
-                }
+                    const chunksToBuffer = 50;
 
-                const nextBytes = await nextBytesPromise;
+                    // Buffer a few more chunks, while the current frames are shown.
+                    for (let i = 0; i < chunksToBuffer; i++) {
+                        noiaStream.getBytes({ start: startBytes + size * i, length: size });
+                    }
 
-                startBytes += size;
-                next(null, nextBytes);
+                    const nextBytes = await nextBytesPromise;
 
-                if (startBytes > end) {
-                    next(null, null);
-                }
-            });
-        }
-    };
+                    startBytes += size;
+                    next(null, nextBytes);
 
-    const video = document.createElement("video");
-    video.controls = true;
-    container.innerHTML = "";
-    container.append(video);
+                    if (startBytes > end) {
+                        next(null, null);
+                    }
+                });
+            }
+        };
 
-    renderMedia.render(file, video, {}, (err: Error | null, elem: HTMLElement) => {
-        if (err) {
-            return console.error(err.message);
-        }
-        // Rendered element with the media in it.
-        logger.Debug("Rendered element with the media in it.", elem);
-    });
+        const video = document.createElement("video");
+        video.controls = true;
+        container.innerHTML = "";
+        container.append(video);
+
+        renderMedia.render(file, video, {}, (err: Error | null, elem: HTMLElement) => {
+            if (err) {
+                return console.error(err.message);
+            }
+            // Rendered element with the media in it.
+            logger.Debug("Rendered element with the media in it.", elem);
+        });
+    }
 }
