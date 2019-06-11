@@ -24,7 +24,7 @@ export async function run(container: HTMLElement, noiaClient: NoiaClient): Promi
     const stream = await noiaClient.openStream({
         // 64mb bust model of Gutenberg
         // src: "ipfs:QmZzRF2DwNi2RqFiZRZqfP7UAXyxte4LLfsqbQ1aQ15hh4"
-        src: "https://noia.network/samples/model.bin"
+        src: "https://example.noia.network/samples/model.bin"
     });
 
     // Load model bytes

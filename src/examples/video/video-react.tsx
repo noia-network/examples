@@ -28,7 +28,7 @@ export class ExampleView extends React.Component<ExampleViewProps> {
                 <Video
                     controls={true}
                     loop={true}
-                    src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+                    src="https://example.noia.network/samples/video.mp4"
                     mimeType="video/mp4"
                     loaderComponent={<div className="loader" />}
                 />

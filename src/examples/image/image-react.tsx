@@ -25,7 +25,7 @@ export class ExampleView extends React.Component<ExampleViewProps> {
     public render(): JSX.Element {
         return (
             <div className="image-example">
-                <Image src="https://example.noia.network/samples/video.mp4" loaderComponent={<div className="loader" />} />
+                <Image src="https://example.noia.network/samples/image.jpg" loaderComponent={<div className="loader" />} />
             </div>
         );
     }
