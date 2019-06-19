@@ -9,7 +9,7 @@ export async function run(container: HTMLElement, noiaClient: NoiaClient): Promi
     container.innerHTML = `<div class="loader" />`;
 
     const stream = await noiaClient.openStream({
-        src: "https://example.noia.network/samples/image.jpg"
+        src: "https://noia.network/samples/image.jpg"
     });
 
     // Load image bytes

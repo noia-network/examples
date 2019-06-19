@@ -6,13 +6,15 @@ import { logger } from "../../logger";
 
 import "./video.scss";
 
+import { fallback } from "@noia-network/sdk/dist/noia-stream";
+
 export async function run(container: HTMLElement, noiaClient: NoiaClient): Promise<void> {
     console.info("Video example.");
     container.className = "video-example";
     container.innerHTML = `<div class="loader" />`;
 
     const noiaStream = await noiaClient.openStream({
-        src: "https://example.noia.network/samples/video.mp4"
+        src: "https://noia.network/samples/video.mp4"
     });
 
     const videoType = "video/mp4";
@@ -28,6 +30,13 @@ export async function run(container: HTMLElement, noiaClient: NoiaClient): Promi
         noiaStream.bufferBytes({
             start: 0,
             length: noiaStream.masterData.metadata.bufferLength / 10
+        });
+
+        fallback.once("fallback", () => {
+            if (noiaStream.masterData.metadata.piecesIntegrity === undefined) {
+                const elem = document.getElementsByTagName("video")[0];
+                elem.src = noiaStream.masterData.src;
+            }
         });
 
         const file: renderMedia.RenderFile = {
